@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ["192.168.43.37"],
   /* config options here */
   experimental: {
     agentFeedback: true,

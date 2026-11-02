@@ -24,3 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Reviews slideshow */
+.marquee-wrap {
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  padding: 0.5rem 0.75rem;
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+.marquee-wrap:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* Jinko animation pasand nahi (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
